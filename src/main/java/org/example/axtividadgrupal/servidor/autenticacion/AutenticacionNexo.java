@@ -1,5 +1,7 @@
 
-package org.example.axtividadgrupal;
+package org.example.axtividadgrupal.servidor.autenticacion;
+
+import org.example.axtividadgrupal.servidor.conexion.ConexionOracle;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

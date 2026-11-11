@@ -1,5 +1,5 @@
 
-package org.example.axtividadgrupal;
+package org.example.axtividadgrupal.cliente.login;
 
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -110,15 +110,26 @@ public class LoginController {
             }
         });
 
+
         tarea.setOnFailed(evento -> {
 
             btnIngresar.setDisable(false);
             txtClave.clear();
 
+            Throwable error = tarea.getException();
+
+            System.err.println("ERROR DEL LOGIN:");
+
+            if (error != null) {
+                error.printStackTrace();
+            }
+
             mostrarMensaje(
-                    "No fue posible conectar con el servidor Nexo."
+                    "Error al comunicarse con el servidor. " +
+                            "Revisa la consola de IntelliJ."
             );
         });
+
 
         Thread hilo = new Thread(tarea);
         hilo.setDaemon(true);

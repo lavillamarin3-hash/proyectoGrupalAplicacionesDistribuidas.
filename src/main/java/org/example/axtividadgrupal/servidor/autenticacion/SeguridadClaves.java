@@ -1,5 +1,5 @@
 
-package org.example.axtividadgrupal;
+package org.example.axtividadgrupal.servidor.autenticacion;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;

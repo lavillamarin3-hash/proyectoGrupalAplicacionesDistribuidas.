@@ -1,5 +1,7 @@
 
-package org.example.axtividadgrupal;
+package org.example.axtividadgrupal.servidor.conexion;
+
+import org.example.axtividadgrupal.servidor.autenticacion.AutenticacionNexo;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -41,6 +43,7 @@ public class ServidorNexo {
                     );
 
                     String solicitud = entrada.readLine();
+                    System.out.println("Solicitud recibida: " + solicitud);
 
                     if ("PING".equals(solicitud)) {
 
@@ -77,6 +80,7 @@ public class ServidorNexo {
                             "Error procesando solicitud: "
                                     + e.getClass().getSimpleName()
                     );
+                    e.printStackTrace();
                 }
             }
 

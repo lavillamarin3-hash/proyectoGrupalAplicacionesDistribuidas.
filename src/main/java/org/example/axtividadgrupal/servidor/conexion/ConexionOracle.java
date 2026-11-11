@@ -1,4 +1,4 @@
-package org.example.axtividadgrupal;
+package org.example.axtividadgrupal.servidor.conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
