@@ -1,15 +1,25 @@
 
 package org.example.axtividadgrupal.cliente.login;
 
+
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
 public class LoginController {
@@ -98,9 +108,29 @@ public class LoginController {
 
             if ("LOGIN_OK".equals(tarea.getValue())) {
 
-                mostrarMensaje(
-                        "Bienvenido al sistema Nexo, " + usuario
-                );
+                try {
+
+                    FXMLLoader loader = new FXMLLoader(
+                            getClass().getResource(
+                                    "/org/example/axtividadgrupal/vistas/menu/menu.fxml"
+                            )
+                    );
+
+                    Parent menu = loader.load();
+
+                    Stage ventana = (Stage)
+                            btnIngresar.getScene().getWindow();
+
+                    ventana.setScene(new Scene(menu, 1100, 700));
+                    ventana.setTitle("Nexo - Menú principal");
+                    ventana.show();
+
+                } catch (IOException e) {
+
+                    e.printStackTrace();
+                    mostrarMensaje("No se pudo abrir el menú principal.");
+
+                }
 
             } else {
 

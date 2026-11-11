@@ -20,4 +20,5 @@ module org.example.axtividadgrupal {
     exports org.example.axtividadgrupal.cliente.conexion;
     opens org.example.axtividadgrupal.cliente.conexion to javafx.fxml;
     opens org.example.axtividadgrupal.app to javafx.fxml;
+    opens org.example.axtividadgrupal.cliente.menu to javafx.fxml;
 }
