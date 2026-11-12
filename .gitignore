@@ -36,9 +36,15 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store.idea/
+.DS_Store
+.idea/
 .run/
 .env
 .env.*
 error-nexo.txt
 *.log
+
+# Credenciales y exportaciones privadas de Oracle
+.oracle-private/
+*.dmp
+*.wallet
